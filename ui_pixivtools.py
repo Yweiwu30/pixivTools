@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'pixivtools.ui'
+## Form generated from reading UI file 'pixivtools-set.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -27,46 +27,43 @@ class Ui_PixivTools(object):
         self.PIDCheck.setObjectName(u"PIDCheck")
         self.groupBox = QGroupBox(self.PIDCheck)
         self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 531, 151))
-        self.layoutWidget_2 = QWidget(self.groupBox)
-        self.layoutWidget_2.setObjectName(u"layoutWidget_2")
-        self.layoutWidget_2.setGeometry(QRect(20, 20, 491, 122))
-        self.verticalLayout_3 = QVBoxLayout(self.layoutWidget_2)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout = QHBoxLayout()
+        self.groupBox.setGeometry(QRect(10, 10, 531, 111))
+        self.layoutWidget = QWidget(self.groupBox)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(18, 29, 491, 23))
+        self.horizontalLayout = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.labelPID = QLabel(self.layoutWidget_2)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.labelPID = QLabel(self.layoutWidget)
         self.labelPID.setObjectName(u"labelPID")
 
         self.horizontalLayout.addWidget(self.labelPID)
 
-        self.editPID = QLineEdit(self.layoutWidget_2)
+        self.editPID = QLineEdit(self.layoutWidget)
         self.editPID.setObjectName(u"editPID")
         self.editPID.setClearButtonEnabled(False)
 
         self.horizontalLayout.addWidget(self.editPID)
 
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout)
-
-        self.horizontalLayout_5 = QHBoxLayout()
+        self.layoutWidget1 = QWidget(self.groupBox)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(20, 60, 491, 30))
+        self.horizontalLayout_5 = QHBoxLayout(self.layoutWidget1)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.isMultiPage = QCheckBox(self.layoutWidget_2)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.isMultiPage = QCheckBox(self.layoutWidget1)
         self.isMultiPage.setObjectName(u"isMultiPage")
 
-        self.verticalLayout.addWidget(self.isMultiPage)
+        self.horizontalLayout_5.addWidget(self.isMultiPage)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.labelPage = QLabel(self.layoutWidget_2)
+        self.labelPage = QLabel(self.layoutWidget1)
         self.labelPage.setObjectName(u"labelPage")
 
         self.horizontalLayout_2.addWidget(self.labelPage)
 
-        self.editPage = QSpinBox(self.layoutWidget_2)
+        self.editPage = QSpinBox(self.layoutWidget1)
         self.editPage.setObjectName(u"editPage")
         self.editPage.setMinimum(1)
         self.editPage.setMaximum(9999)
@@ -74,100 +71,45 @@ class Ui_PixivTools(object):
         self.horizontalLayout_2.addWidget(self.editPage)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
-
-
-        self.horizontalLayout_5.addLayout(self.verticalLayout)
+        self.horizontalLayout_5.addLayout(self.horizontalLayout_2)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
 
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.labelType = QLabel(self.layoutWidget_2)
-        self.labelType.setObjectName(u"labelType")
-
-        self.horizontalLayout_3.addWidget(self.labelType)
-
-        self.pngButton = QRadioButton(self.layoutWidget_2)
-        self.pngButton.setObjectName(u"pngButton")
-        self.pngButton.setTabletTracking(False)
-        self.pngButton.setAcceptDrops(False)
-        self.pngButton.setChecked(True)
-
-        self.horizontalLayout_3.addWidget(self.pngButton)
-
-        self.jpgButton = QRadioButton(self.layoutWidget_2)
-        self.jpgButton.setObjectName(u"jpgButton")
-
-        self.horizontalLayout_3.addWidget(self.jpgButton)
-
-        self.gifButton = QRadioButton(self.layoutWidget_2)
-        self.gifButton.setObjectName(u"gifButton")
-
-        self.horizontalLayout_3.addWidget(self.gifButton)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
-
-        self.isMirror = QCheckBox(self.layoutWidget_2)
-        self.isMirror.setObjectName(u"isMirror")
-        self.isMirror.setChecked(True)
-
-        self.verticalLayout_2.addWidget(self.isMirror)
-
-
-        self.horizontalLayout_5.addLayout(self.verticalLayout_2)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout_5)
-
-        self.horizontalLayout_13 = QHBoxLayout()
-        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.isRemember = QCheckBox(self.layoutWidget_2)
-        self.isRemember.setObjectName(u"isRemember")
-        self.isRemember.setChecked(True)
-
-        self.horizontalLayout_13.addWidget(self.isRemember)
-
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_13.addItem(self.horizontalSpacer)
-
-        self.PIDSubmit = QPushButton(self.layoutWidget_2)
+        self.PIDSubmit = QPushButton(self.layoutWidget1)
         self.PIDSubmit.setObjectName(u"PIDSubmit")
 
-        self.horizontalLayout_13.addWidget(self.PIDSubmit)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout_13)
+        self.horizontalLayout_5.addWidget(self.PIDSubmit)
 
         self.PictureView = QLabel(self.PIDCheck)
         self.PictureView.setObjectName(u"PictureView")
-        self.PictureView.setGeometry(QRect(10, 170, 530, 375))
+        self.PictureView.setGeometry(QRect(10, 125, 530, 420))
         self.PictureView.setMinimumSize(QSize(10, 10))
-        self.PictureView.setMaximumSize(QSize(530, 375))
+        self.PictureView.setMaximumSize(QSize(530, 420))
         self.PictureView.setAlignment(Qt.AlignCenter)
-        self.layoutWidget = QWidget(self.PIDCheck)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(180, 550, 371, 30))
-        self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget)
+        self.layoutWidget2 = QWidget(self.PIDCheck)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(90, 550, 461, 30))
+        self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.ResetPicture = QPushButton(self.layoutWidget)
+        self.ResetPicture = QPushButton(self.layoutWidget2)
         self.ResetPicture.setObjectName(u"ResetPicture")
 
         self.horizontalLayout_4.addWidget(self.ResetPicture)
 
-        self.SavePicture = QPushButton(self.layoutWidget)
+        self.OpenPicture = QPushButton(self.layoutWidget2)
+        self.OpenPicture.setObjectName(u"OpenPicture")
+
+        self.horizontalLayout_4.addWidget(self.OpenPicture)
+
+        self.SavePicture = QPushButton(self.layoutWidget2)
         self.SavePicture.setObjectName(u"SavePicture")
 
         self.horizontalLayout_4.addWidget(self.SavePicture)
 
-        self.ReloadPicture = QPushButton(self.layoutWidget)
+        self.ReloadPicture = QPushButton(self.layoutWidget2)
         self.ReloadPicture.setObjectName(u"ReloadPicture")
 
         self.horizontalLayout_4.addWidget(self.ReloadPicture)
@@ -184,26 +126,26 @@ class Ui_PixivTools(object):
         self.groupBox_2 = QGroupBox(self.RandomRank)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setGeometry(QRect(19, 19, 511, 61))
-        self.layoutWidget1 = QWidget(self.groupBox_2)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(10, 20, 491, 30))
-        self.horizontalLayout_7 = QHBoxLayout(self.layoutWidget1)
+        self.layoutWidget3 = QWidget(self.groupBox_2)
+        self.layoutWidget3.setObjectName(u"layoutWidget3")
+        self.layoutWidget3.setGeometry(QRect(10, 20, 491, 30))
+        self.horizontalLayout_7 = QHBoxLayout(self.layoutWidget3)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.Daily = QRadioButton(self.layoutWidget1)
+        self.Daily = QRadioButton(self.layoutWidget3)
         self.Daily.setObjectName(u"Daily")
         self.Daily.setChecked(True)
 
         self.horizontalLayout_6.addWidget(self.Daily)
 
-        self.Weekly = QRadioButton(self.layoutWidget1)
+        self.Weekly = QRadioButton(self.layoutWidget3)
         self.Weekly.setObjectName(u"Weekly")
 
         self.horizontalLayout_6.addWidget(self.Weekly)
 
-        self.Monthly = QRadioButton(self.layoutWidget1)
+        self.Monthly = QRadioButton(self.layoutWidget3)
         self.Monthly.setObjectName(u"Monthly")
 
         self.horizontalLayout_6.addWidget(self.Monthly)
@@ -215,7 +157,7 @@ class Ui_PixivTools(object):
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_2)
 
-        self.RandomButton = QPushButton(self.layoutWidget1)
+        self.RandomButton = QPushButton(self.layoutWidget3)
         self.RandomButton.setObjectName(u"RandomButton")
 
         self.horizontalLayout_7.addWidget(self.RandomButton)
@@ -223,22 +165,23 @@ class Ui_PixivTools(object):
         self.groupBox_3 = QGroupBox(self.RandomRank)
         self.groupBox_3.setObjectName(u"groupBox_3")
         self.groupBox_3.setGeometry(QRect(20, 90, 511, 121))
-        self.layoutWidget2 = QWidget(self.groupBox_3)
-        self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(21, 20, 471, 91))
-        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget2)
+        self.layoutWidget4 = QWidget(self.groupBox_3)
+        self.layoutWidget4.setObjectName(u"layoutWidget4")
+        self.layoutWidget4.setGeometry(QRect(21, 20, 471, 91))
+        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget4)
+        self.verticalLayout_4.setSpacing(7)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.name_l = QLabel(self.layoutWidget2)
+        self.name_l = QLabel(self.layoutWidget4)
         self.name_l.setObjectName(u"name_l")
         self.name_l.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_9.addWidget(self.name_l)
 
-        self.name = QLineEdit(self.layoutWidget2)
+        self.name = QLineEdit(self.layoutWidget4)
         self.name.setObjectName(u"name")
         self.name.setReadOnly(True)
 
@@ -249,13 +192,13 @@ class Ui_PixivTools(object):
 
         self.horizontalLayout_10 = QHBoxLayout()
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.date_l = QLabel(self.layoutWidget2)
+        self.date_l = QLabel(self.layoutWidget4)
         self.date_l.setObjectName(u"date_l")
         self.date_l.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_10.addWidget(self.date_l)
 
-        self.date = QLineEdit(self.layoutWidget2)
+        self.date = QLineEdit(self.layoutWidget4)
         self.date.setObjectName(u"date")
         self.date.setReadOnly(True)
 
@@ -266,13 +209,13 @@ class Ui_PixivTools(object):
 
         self.horizontalLayout_14 = QHBoxLayout()
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.pid_l = QLabel(self.layoutWidget2)
+        self.pid_l = QLabel(self.layoutWidget4)
         self.pid_l.setObjectName(u"pid_l")
         self.pid_l.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_14.addWidget(self.pid_l)
 
-        self.pid_r = QLineEdit(self.layoutWidget2)
+        self.pid_r = QLineEdit(self.layoutWidget4)
         self.pid_r.setObjectName(u"pid_r")
         self.pid_r.setReadOnly(True)
 
@@ -283,12 +226,12 @@ class Ui_PixivTools(object):
 
         self.horizontalLayout_15 = QHBoxLayout()
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.tag_l = QLabel(self.layoutWidget2)
+        self.tag_l = QLabel(self.layoutWidget4)
         self.tag_l.setObjectName(u"tag_l")
 
         self.horizontalLayout_15.addWidget(self.tag_l)
 
-        self.tag = QLineEdit(self.layoutWidget2)
+        self.tag = QLineEdit(self.layoutWidget4)
         self.tag.setObjectName(u"tag")
         self.tag.setReadOnly(True)
 
@@ -321,188 +264,87 @@ class Ui_PixivTools(object):
         self.PixivTools_Tab.addTab(self.RandomRank, "")
         self.DownloadLab = QWidget()
         self.DownloadLab.setObjectName(u"DownloadLab")
-        self.groupBox_4 = QGroupBox(self.DownloadLab)
-        self.groupBox_4.setObjectName(u"groupBox_4")
-        self.groupBox_4.setGeometry(QRect(10, 10, 531, 131))
-        self.layoutWidget3 = QWidget(self.groupBox_4)
-        self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(20, 20, 491, 101))
-        self.verticalLayout_6 = QVBoxLayout(self.layoutWidget3)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_11 = QHBoxLayout()
+        self.Download = QPushButton(self.DownloadLab)
+        self.Download.setObjectName(u"Download")
+        self.Download.setGeometry(QRect(450, 550, 93, 28))
+        self.pictureList = QListWidget(self.DownloadLab)
+        self.pictureList.setObjectName(u"pictureList")
+        self.pictureList.setGeometry(QRect(20, 50, 481, 441))
+        self.Clean = QPushButton(self.DownloadLab)
+        self.Clean.setObjectName(u"Clean")
+        self.Clean.setGeometry(QRect(510, 80, 28, 28))
+        self.Clean.setMinimumSize(QSize(28, 28))
+        self.Clean.setMaximumSize(QSize(28, 28))
+        self.Delete = QPushButton(self.DownloadLab)
+        self.Delete.setObjectName(u"Delete")
+        self.Delete.setGeometry(QRect(510, 50, 28, 28))
+        self.Delete.setMinimumSize(QSize(28, 28))
+        self.Delete.setMaximumSize(QSize(28, 28))
+        self.layoutWidget5 = QWidget(self.DownloadLab)
+        self.layoutWidget5.setObjectName(u"layoutWidget5")
+        self.layoutWidget5.setGeometry(QRect(20, 10, 521, 30))
+        self.horizontalLayout_11 = QHBoxLayout(self.layoutWidget5)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.label = QLabel(self.layoutWidget3)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.layoutWidget5)
         self.label.setObjectName(u"label")
 
         self.horizontalLayout_11.addWidget(self.label)
 
-        self.D_pid = QLineEdit(self.layoutWidget3)
+        self.D_pid = QLineEdit(self.layoutWidget5)
         self.D_pid.setObjectName(u"D_pid")
 
         self.horizontalLayout_11.addWidget(self.D_pid)
 
-        self.Add = QPushButton(self.layoutWidget3)
+        self.Add = QPushButton(self.layoutWidget5)
         self.Add.setObjectName(u"Add")
         self.Add.setMinimumSize(QSize(28, 28))
         self.Add.setMaximumSize(QSize(28, 28))
 
         self.horizontalLayout_11.addWidget(self.Add)
 
-        self.Help = QPushButton(self.layoutWidget3)
-        self.Help.setObjectName(u"Help")
-        self.Help.setMinimumSize(QSize(28, 28))
-        self.Help.setMaximumSize(QSize(28, 28))
-
-        self.horizontalLayout_11.addWidget(self.Help)
-
-
-        self.verticalLayout_6.addLayout(self.horizontalLayout_11)
-
-        self.horizontalLayout_16 = QHBoxLayout()
-        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_12 = QHBoxLayout()
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.AutoFolder = QCheckBox(self.layoutWidget3)
-        self.AutoFolder.setObjectName(u"AutoFolder")
-        self.AutoFolder.setChecked(True)
-
-        self.horizontalLayout_12.addWidget(self.AutoFolder)
-
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_12.addItem(self.horizontalSpacer_4)
-
-        self.label_2 = QLabel(self.layoutWidget3)
-        self.label_2.setObjectName(u"label_2")
-
-        self.horizontalLayout_12.addWidget(self.label_2)
-
-        self.D_png = QRadioButton(self.layoutWidget3)
-        self.buttonGroup_type = QButtonGroup(PixivTools)
-        self.buttonGroup_type.setObjectName(u"buttonGroup_type")
-        self.buttonGroup_type.addButton(self.D_png)
-        self.D_png.setObjectName(u"D_png")
-        self.D_png.setChecked(True)
-
-        self.horizontalLayout_12.addWidget(self.D_png)
-
-        self.D_jpg = QRadioButton(self.layoutWidget3)
-        self.buttonGroup_type.addButton(self.D_jpg)
-        self.D_jpg.setObjectName(u"D_jpg")
-
-        self.horizontalLayout_12.addWidget(self.D_jpg)
-
-        self.D_gif = QRadioButton(self.layoutWidget3)
-        self.buttonGroup_type.addButton(self.D_gif)
-        self.D_gif.setObjectName(u"D_gif")
-
-        self.horizontalLayout_12.addWidget(self.D_gif)
-
-
-        self.horizontalLayout_16.addLayout(self.horizontalLayout_12)
-
-
-        self.verticalLayout_6.addLayout(self.horizontalLayout_16)
-
-        self.horizontalLayout_17 = QHBoxLayout()
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.label_3 = QLabel(self.layoutWidget3)
-        self.label_3.setObjectName(u"label_3")
-
-        self.horizontalLayout_17.addWidget(self.label_3)
-
-        self.NamePid = QRadioButton(self.layoutWidget3)
-        self.buttonGroup_name = QButtonGroup(PixivTools)
-        self.buttonGroup_name.setObjectName(u"buttonGroup_name")
-        self.buttonGroup_name.addButton(self.NamePid)
-        self.NamePid.setObjectName(u"NamePid")
-        self.NamePid.setChecked(True)
-
-        self.horizontalLayout_17.addWidget(self.NamePid)
-
-        self.NameNo = QRadioButton(self.layoutWidget3)
-        self.buttonGroup_name.addButton(self.NameNo)
-        self.NameNo.setObjectName(u"NameNo")
-
-        self.horizontalLayout_17.addWidget(self.NameNo)
-
-        self.NameSelf = QRadioButton(self.layoutWidget3)
-        self.buttonGroup_name.addButton(self.NameSelf)
-        self.NameSelf.setObjectName(u"NameSelf")
-
-        self.horizontalLayout_17.addWidget(self.NameSelf)
-
-        self.NameEdit = QLineEdit(self.layoutWidget3)
-        self.NameEdit.setObjectName(u"NameEdit")
-        self.NameEdit.setEnabled(False)
-
-        self.horizontalLayout_17.addWidget(self.NameEdit)
-
-
-        self.verticalLayout_6.addLayout(self.horizontalLayout_17)
-
-        self.StatusText = QTextEdit(self.DownloadLab)
-        self.StatusText.setObjectName(u"StatusText")
-        self.StatusText.setGeometry(QRect(10, 380, 531, 161))
-        self.StatusText.setReadOnly(True)
-        self.Download = QPushButton(self.DownloadLab)
-        self.Download.setObjectName(u"Download")
-        self.Download.setGeometry(QRect(450, 550, 93, 28))
-        self.pictureList = QListWidget(self.DownloadLab)
-        self.pictureList.setObjectName(u"pictureList")
-        self.pictureList.setGeometry(QRect(10, 150, 491, 201))
-        self.label_4 = QLabel(self.DownloadLab)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(10, 360, 72, 15))
-        self.Clean = QPushButton(self.DownloadLab)
-        self.Clean.setObjectName(u"Clean")
-        self.Clean.setGeometry(QRect(510, 190, 28, 28))
-        self.Clean.setMinimumSize(QSize(28, 28))
-        self.Clean.setMaximumSize(QSize(28, 28))
-        self.Delete = QPushButton(self.DownloadLab)
-        self.Delete.setObjectName(u"Delete")
-        self.Delete.setGeometry(QRect(510, 150, 28, 28))
-        self.Delete.setMinimumSize(QSize(28, 28))
-        self.Delete.setMaximumSize(QSize(28, 28))
+        self.downloadBar = QProgressBar(self.DownloadLab)
+        self.downloadBar.setObjectName(u"downloadBar")
+        self.downloadBar.setGeometry(QRect(20, 510, 521, 23))
+        self.downloadBar.setValue(0)
         self.PixivTools_Tab.addTab(self.DownloadLab, "")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.groupBox_5 = QGroupBox(self.tab)
         self.groupBox_5.setObjectName(u"groupBox_5")
-        self.groupBox_5.setGeometry(QRect(20, 20, 511, 101))
+        self.groupBox_5.setGeometry(QRect(20, 260, 511, 101))
         self.checkBox = QCheckBox(self.groupBox_5)
         self.checkBox.setObjectName(u"checkBox")
         self.checkBox.setGeometry(QRect(20, 30, 91, 19))
         self.checkBox.setChecked(True)
-        self.layoutWidget4 = QWidget(self.groupBox_5)
-        self.layoutWidget4.setObjectName(u"layoutWidget4")
-        self.layoutWidget4.setGeometry(QRect(20, 60, 471, 21))
-        self.horizontalLayout_18 = QHBoxLayout(self.layoutWidget4)
+        self.layoutWidget6 = QWidget(self.groupBox_5)
+        self.layoutWidget6.setObjectName(u"layoutWidget6")
+        self.layoutWidget6.setGeometry(QRect(20, 60, 471, 21))
+        self.horizontalLayout_18 = QHBoxLayout(self.layoutWidget6)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.label_5 = QLabel(self.layoutWidget4)
+        self.label_5 = QLabel(self.layoutWidget6)
         self.label_5.setObjectName(u"label_5")
 
         self.horizontalLayout_18.addWidget(self.label_5)
 
-        self.radioButton = QRadioButton(self.layoutWidget4)
+        self.radioButton = QRadioButton(self.layoutWidget6)
         self.radioButton.setObjectName(u"radioButton")
 
         self.horizontalLayout_18.addWidget(self.radioButton)
 
-        self.radioButton_2 = QRadioButton(self.layoutWidget4)
+        self.radioButton_2 = QRadioButton(self.layoutWidget6)
         self.radioButton_2.setObjectName(u"radioButton_2")
         self.radioButton_2.setChecked(True)
 
         self.horizontalLayout_18.addWidget(self.radioButton_2)
 
-        self.radioButton_3 = QRadioButton(self.layoutWidget4)
+        self.radioButton_3 = QRadioButton(self.layoutWidget6)
         self.radioButton_3.setObjectName(u"radioButton_3")
 
         self.horizontalLayout_18.addWidget(self.radioButton_3)
 
-        self.radioButton_4 = QRadioButton(self.layoutWidget4)
+        self.radioButton_4 = QRadioButton(self.layoutWidget6)
         self.radioButton_4.setObjectName(u"radioButton_4")
 
         self.horizontalLayout_18.addWidget(self.radioButton_4)
@@ -513,12 +355,138 @@ class Ui_PixivTools(object):
         self.pushButton_2 = QPushButton(self.tab)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(320, 540, 101, 28))
-        self.groupBox_6 = QGroupBox(self.tab)
-        self.groupBox_6.setObjectName(u"groupBox_6")
-        self.groupBox_6.setGeometry(QRect(20, 130, 511, 80))
-        self.checkBox_2 = QCheckBox(self.groupBox_6)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setGeometry(QRect(20, 40, 161, 19))
+        #self.groupBox_6 = QGroupBox(self.tab)
+        #self.groupBox_6.setObjectName(u"groupBox_6")
+        #self.groupBox_6.setGeometry(QRect(20, 370, 511, 80))
+        #self.checkBox_2 = QCheckBox(self.groupBox_6)
+        #self.checkBox_2.setObjectName(u"checkBox_2")
+        #self.checkBox_2.setGeometry(QRect(20, 40, 161, 19))
+        self.groupBox_8 = QGroupBox(self.tab)
+        self.groupBox_8.setObjectName(u"groupBox_8")
+        self.groupBox_8.setGeometry(QRect(20, 20, 511, 121))
+        self.layoutWidget_4 = QWidget(self.groupBox_8)
+        self.layoutWidget_4.setObjectName(u"layoutWidget_4")
+        self.layoutWidget_4.setGeometry(QRect(20, 30, 311, 75))
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget_4)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.labelType = QLabel(self.layoutWidget_4)
+        self.labelType.setObjectName(u"labelType")
+
+        self.horizontalLayout_3.addWidget(self.labelType)
+
+        self.pngButton = QRadioButton(self.layoutWidget_4)
+        self.pngButton.setObjectName(u"pngButton")
+        self.pngButton.setTabletTracking(False)
+        self.pngButton.setAcceptDrops(False)
+        self.pngButton.setChecked(True)
+
+        self.horizontalLayout_3.addWidget(self.pngButton)
+
+        self.jpgButton = QRadioButton(self.layoutWidget_4)
+        self.jpgButton.setObjectName(u"jpgButton")
+
+        self.horizontalLayout_3.addWidget(self.jpgButton)
+
+        self.gifButton = QRadioButton(self.layoutWidget_4)
+        self.gifButton.setObjectName(u"gifButton")
+
+        self.horizontalLayout_3.addWidget(self.gifButton)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
+
+        self.isMirror = QCheckBox(self.layoutWidget_4)
+        self.isMirror.setObjectName(u"isMirror")
+        self.isMirror.setChecked(True)
+
+        self.verticalLayout_2.addWidget(self.isMirror)
+
+        self.isRemember = QCheckBox(self.layoutWidget_4)
+        self.isRemember.setObjectName(u"isRemember")
+        self.isRemember.setChecked(True)
+
+        self.verticalLayout_2.addWidget(self.isRemember)
+
+        self.groupBox_4 = QGroupBox(self.tab)
+        self.groupBox_4.setObjectName(u"groupBox_4")
+        self.groupBox_4.setGeometry(QRect(20, 150, 511, 101))
+        self.layoutWidget7 = QWidget(self.groupBox_4)
+        self.layoutWidget7.setObjectName(u"layoutWidget7")
+        self.layoutWidget7.setGeometry(QRect(20, 30, 424, 54))
+        self.verticalLayout = QVBoxLayout(self.layoutWidget7)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_12 = QHBoxLayout()
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.AutoFolder = QCheckBox(self.layoutWidget7)
+        self.AutoFolder.setObjectName(u"AutoFolder")
+        self.AutoFolder.setChecked(True)
+
+        self.horizontalLayout_12.addWidget(self.AutoFolder)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_12.addItem(self.horizontalSpacer_4)
+
+        self.label_2 = QLabel(self.layoutWidget7)
+        self.label_2.setObjectName(u"label_2")
+
+        self.horizontalLayout_12.addWidget(self.label_2)
+
+        self.D_png = QRadioButton(self.layoutWidget7)
+        self.D_png.setObjectName(u"D_png")
+        self.D_png.setChecked(True)
+
+        self.horizontalLayout_12.addWidget(self.D_png)
+
+        self.D_jpg = QRadioButton(self.layoutWidget7)
+        self.D_jpg.setObjectName(u"D_jpg")
+
+        self.horizontalLayout_12.addWidget(self.D_jpg)
+
+        self.D_gif = QRadioButton(self.layoutWidget7)
+        self.D_gif.setObjectName(u"D_gif")
+
+        self.horizontalLayout_12.addWidget(self.D_gif)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_12)
+
+        self.horizontalLayout_17 = QHBoxLayout()
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.label_3 = QLabel(self.layoutWidget7)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout_17.addWidget(self.label_3)
+
+        self.NamePid = QRadioButton(self.layoutWidget7)
+        self.NamePid.setObjectName(u"NamePid")
+        self.NamePid.setChecked(True)
+
+        self.horizontalLayout_17.addWidget(self.NamePid)
+
+        self.NameNo = QRadioButton(self.layoutWidget7)
+        self.NameNo.setObjectName(u"NameNo")
+
+        self.horizontalLayout_17.addWidget(self.NameNo)
+
+        self.NameSelf = QRadioButton(self.layoutWidget7)
+        self.NameSelf.setObjectName(u"NameSelf")
+
+        self.horizontalLayout_17.addWidget(self.NameSelf)
+
+        self.NameEdit = QLineEdit(self.layoutWidget7)
+        self.NameEdit.setObjectName(u"NameEdit")
+        self.NameEdit.setEnabled(False)
+
+        self.horizontalLayout_17.addWidget(self.NameEdit)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_17)
+
         self.PixivTools_Tab.addTab(self.tab, "")
         self.about = QWidget()
         self.about.setObjectName(u"about")
@@ -561,15 +529,10 @@ class Ui_PixivTools(object):
         self.editPID.setPlaceholderText(QCoreApplication.translate("PixivTools", u"\u5982\uff1a82775556", None))
         self.isMultiPage.setText(QCoreApplication.translate("PixivTools", u"\u591a\u9875\u63d2\u753b", None))
         self.labelPage.setText(QCoreApplication.translate("PixivTools", u"\u63d2\u753b\u9875\u6570", None))
-        self.labelType.setText(QCoreApplication.translate("PixivTools", u"\u56fe\u7247\u540e\u7f00\u540d", None))
-        self.pngButton.setText(QCoreApplication.translate("PixivTools", u"png", None))
-        self.jpgButton.setText(QCoreApplication.translate("PixivTools", u"jpg", None))
-        self.gifButton.setText(QCoreApplication.translate("PixivTools", u"gif       ", None))
-        self.isMirror.setText(QCoreApplication.translate("PixivTools", u"\u4f7f\u7528\u955c\u50cf\u57df\u540d\uff08\u63a8\u8350\uff09", None))
-        self.isRemember.setText(QCoreApplication.translate("PixivTools", u"\u8bb0\u5f55\u56fe\u7247\u67e5\u8be2\u8bb0\u5f55", None))
         self.PIDSubmit.setText(QCoreApplication.translate("PixivTools", u"\u63d0\u4ea4", None))
         self.PictureView.setText(QCoreApplication.translate("PixivTools", u"\u56fe\u7247\u5c06\u5728\u8fd9\u91cc\u5c55\u793a...", None))
         self.ResetPicture.setText(QCoreApplication.translate("PixivTools", u"\u91cd\u7f6e\u56fe\u7247", None))
+        self.OpenPicture.setText(QCoreApplication.translate("PixivTools", u"\u6253\u5f00\u56fe\u7247", None))
         self.SavePicture.setText(QCoreApplication.translate("PixivTools", u"\u4fdd\u5b58\u56fe\u7247", None))
         self.ReloadPicture.setText(QCoreApplication.translate("PixivTools", u"\u5237\u65b0\u56fe\u7247", None))
         self.PixivTools_Tab.setTabText(self.PixivTools_Tab.indexOf(self.PIDCheck), QCoreApplication.translate("PixivTools", u"PID\u67e5\u56fe", None))
@@ -595,26 +558,13 @@ class Ui_PixivTools(object):
 #if QT_CONFIG(accessibility)
         self.DownloadLab.setAccessibleName("")
 #endif // QT_CONFIG(accessibility)
-        self.groupBox_4.setTitle(QCoreApplication.translate("PixivTools", u"\u5217\u8868\u6dfb\u52a0/\u8bbe\u7f6e", None))
+        self.Download.setText(QCoreApplication.translate("PixivTools", u"\u4e0b\u8f7d", None))
+        self.Clean.setText(QCoreApplication.translate("PixivTools", u"X", None))
+        self.Delete.setText(QCoreApplication.translate("PixivTools", u"-", None))
         self.label.setText(QCoreApplication.translate("PixivTools", u"PID", None))
         self.D_pid.setInputMask("")
         self.D_pid.setPlaceholderText(QCoreApplication.translate("PixivTools", u"\u6dfb\u52a0\u591a\u4e2apid\u7528\u7a7a\u683c\u5206\u9694", None))
         self.Add.setText(QCoreApplication.translate("PixivTools", u"+", None))
-        self.Help.setText(QCoreApplication.translate("PixivTools", u"?", None))
-        self.AutoFolder.setText(QCoreApplication.translate("PixivTools", u"\u81ea\u52a8\u5efa\u7acb\u6587\u4ef6\u5939", None))
-        self.label_2.setText(QCoreApplication.translate("PixivTools", u"\u56fe\u7247\u683c\u5f0f", None))
-        self.D_png.setText(QCoreApplication.translate("PixivTools", u"png", None))
-        self.D_jpg.setText(QCoreApplication.translate("PixivTools", u"jpg", None))
-        self.D_gif.setText(QCoreApplication.translate("PixivTools", u"gif", None))
-        self.label_3.setText(QCoreApplication.translate("PixivTools", u"\u6587\u4ef6\u540d", None))
-        self.NamePid.setText(QCoreApplication.translate("PixivTools", u"pid", None))
-        self.NameNo.setText(QCoreApplication.translate("PixivTools", u"No.", None))
-        self.NameSelf.setText(QCoreApplication.translate("PixivTools", u"\u81ea\u5b9a\u4e49", None))
-        self.NameEdit.setPlaceholderText("")
-        self.Download.setText(QCoreApplication.translate("PixivTools", u"\u4e0b\u8f7d", None))
-        self.label_4.setText(QCoreApplication.translate("PixivTools", u"\u63a7\u5236\u53f0", None))
-        self.Clean.setText(QCoreApplication.translate("PixivTools", u"X", None))
-        self.Delete.setText(QCoreApplication.translate("PixivTools", u"-", None))
         self.PixivTools_Tab.setTabText(self.PixivTools_Tab.indexOf(self.DownloadLab), QCoreApplication.translate("PixivTools", u"\u6279\u91cf\u4e0b\u8f7d", None))
         self.groupBox_5.setTitle(QCoreApplication.translate("PixivTools", u"\u65e5\u5fd7", None))
         self.checkBox.setText(QCoreApplication.translate("PixivTools", u"\u8bb0\u5f55\u65e5\u5fd7", None))
@@ -625,8 +575,26 @@ class Ui_PixivTools(object):
         self.radioButton_4.setText(QCoreApplication.translate("PixivTools", u"Error", None))
         self.pushButton.setText(QCoreApplication.translate("PixivTools", u"\u4fdd\u5b58\u8bbe\u7f6e", None))
         self.pushButton_2.setText(QCoreApplication.translate("PixivTools", u"\u91cd\u7f6e", None))
-        self.groupBox_6.setTitle(QCoreApplication.translate("PixivTools", u"\u5176\u4ed6", None))
-        self.checkBox_2.setText(QCoreApplication.translate("PixivTools", u"\u62a5\u9519\u65f6\u81ea\u52a8\u5173\u95ed\u8f6f\u4ef6", None))
+        #self.groupBox_6.setTitle(QCoreApplication.translate("PixivTools", u"\u5176\u4ed6", None))
+        #self.checkBox_2.setText(QCoreApplication.translate("PixivTools", u"\u62a5\u9519\u65f6\u81ea\u52a8\u5173\u95ed\u8f6f\u4ef6", None))
+        self.groupBox_8.setTitle(QCoreApplication.translate("PixivTools", u"PID\u67e5\u56fe", None))
+        self.labelType.setText(QCoreApplication.translate("PixivTools", u"\u56fe\u7247\u540e\u7f00\u540d", None))
+        self.pngButton.setText(QCoreApplication.translate("PixivTools", u"png", None))
+        self.jpgButton.setText(QCoreApplication.translate("PixivTools", u"jpg", None))
+        self.gifButton.setText(QCoreApplication.translate("PixivTools", u"gif       ", None))
+        self.isMirror.setText(QCoreApplication.translate("PixivTools", u"\u4f7f\u7528\u955c\u50cf\u57df\u540d\uff08\u63a8\u8350\uff09", None))
+        self.isRemember.setText(QCoreApplication.translate("PixivTools", u"\u8bb0\u5f55\u56fe\u7247\u67e5\u8be2\u8bb0\u5f55", None))
+        self.groupBox_4.setTitle(QCoreApplication.translate("PixivTools", u"\u6279\u91cf\u4e0b\u8f7d", None))
+        self.AutoFolder.setText(QCoreApplication.translate("PixivTools", u"\u81ea\u52a8\u5efa\u7acb\u6587\u4ef6\u5939", None))
+        self.label_2.setText(QCoreApplication.translate("PixivTools", u"\u56fe\u7247\u683c\u5f0f", None))
+        self.D_png.setText(QCoreApplication.translate("PixivTools", u"png", None))
+        self.D_jpg.setText(QCoreApplication.translate("PixivTools", u"jpg", None))
+        self.D_gif.setText(QCoreApplication.translate("PixivTools", u"gif", None))
+        self.label_3.setText(QCoreApplication.translate("PixivTools", u"\u6587\u4ef6\u540d", None))
+        self.NamePid.setText(QCoreApplication.translate("PixivTools", u"pid", None))
+        self.NameNo.setText(QCoreApplication.translate("PixivTools", u"No.", None))
+        self.NameSelf.setText(QCoreApplication.translate("PixivTools", u"\u81ea\u5b9a\u4e49", None))
+        self.NameEdit.setPlaceholderText("")
         self.PixivTools_Tab.setTabText(self.PixivTools_Tab.indexOf(self.tab), QCoreApplication.translate("PixivTools", u"\u8bbe\u7f6e", None))
         self.About.setText(QCoreApplication.translate("PixivTools", u"\u5173\u4e8e\u672c\u8f6f\u4ef6...", None))
         self.PixivTools_Tab.setTabText(self.PixivTools_Tab.indexOf(self.about), QCoreApplication.translate("PixivTools", u"\u5173\u4e8e", None))

@@ -29,7 +29,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         atexit.register(self.delete)
         atexit.register(self.delete_r)
 
-        self.version = "beta-2.2"
+        self.version = "release-2.1"
 
         self.PS = PicSignals_r()  # 实例化
 
@@ -51,7 +51,20 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         self.img = None
         self.pidList = []
         self.Error = False
-
+        self.fn = ""
+        self.esc_err = False
+        
+        self.picSetButtonGroup = QButtonGroup(self.groupBox_4)
+        self.picSetButtonGroup.addButton(self.D_png)
+        self.picSetButtonGroup.addButton(self.D_jpg)
+        self.picSetButtonGroup.addButton(self.D_gif)
+        
+        self.fileSetButtonGroup = QButtonGroup(self.groupBox_4)
+        self.fileSetButtonGroup.addButton(self.NameNo)
+        self.fileSetButtonGroup.addButton(self.NamePid)
+        self.fileSetButtonGroup.addButton(self.NameSelf)
+        
+        self.D_png.setChecked(True)
         self.editPage.setEnabled(False)
         self.SavePicture.setEnabled(False)
         self.ReloadPicture.setEnabled(False)
@@ -74,13 +87,12 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         self.Delete.clicked.connect(self.deleteList)
         self.Download.clicked.connect(self.Download_d)
         self.pictureList.itemClicked.connect(self.clickList)
-
+        self.OpenPicture.clicked.connect(self.open_picture)
+        
         self.Delete.setEnabled(False)
 
-        #self.SearchList.addItems(["该功能尚未制作", "如果你有关于搜索的api可以提供（最好不用翻墙）", "并且可以返回pid", "请务必告诉我们！", "联系方式详见\"关于\"一栏"])
-
         self.About.setText(
-            "pixiv工具箱\nversion {}\n作者：0x42D\nhttps://github.com/Yweiwu30\n联系方式：2046360988@qq.com".format(self.version))
+            "pixiv工具箱\nversion {}\nhttps://github.com/Yweiwu30\n问题反馈邮箱：2046360988@qq.com\nCopyright ©2022 0x4D2. All Rights Reserved.\n".format(self.version))
         self.PictureView.setText("预览图将在这里展示...")
         self.PictureView_2.setText("预览图将在这里展示...")
 
@@ -115,14 +127,16 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         def warp(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
-            except:
+            except FileNotFoundError:
+                pass
+            except Exception as e:
                 logging.basicConfig(level=logging.WARNING,  
                     filename='./log.txt',  
                     filemode='w',  
                     format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')  
                 logging.error(f"在执行 {func.__name__}时出现错误, args: {args}, kwargs: {kwargs}")
                 logging.error(traceback.format_exc())
-                win32api.MessageBox(0, "程序出现错误，请查看日志", "错误", win32con.MB_ICONERROR)
+                win32api.MessageBox(0, "程序出现错误，报错信息如下：\n{}".format(e), "错误", win32con.MB_ICONERROR)
         return warp
 
     def printInfo(self, fd, text):
@@ -136,7 +150,6 @@ class PixivTools(QMainWindow, Ui_PixivTools):
 
     @catch_exception
     def submit(self):  # 组合图片地址
-        print(1/0)
         # self.PictureView.setText("图片获取中，这可能要一段时间")
         self.logger.info("加载网址")
         self.readInfo()
@@ -155,7 +168,13 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         self.url += self.PicType
 
         self.showPicture(self.url)
-
+    
+    def open_picture(self):
+        if self.fn == "":
+            pass
+        else:
+            os.open(self.fn)
+    
     @catch_exception
     def disabled_sth(self, state):
         if state == False:
@@ -186,7 +205,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
             self.gifButton.setEnabled(True)
             self.isRemember.setEnabled(True)
 
-    @catch_exception
+    # @catch_exception
     def changeMultiPage(self):
         if self.isMultiPage.isChecked():
             self.editPage.setEnabled(True)
@@ -218,7 +237,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
     @catch_exception
     def showPicture(self, url):  # 展示图片
         self.statusBar.showMessage("加载图片中...")  # 显示状态
-        thread = Thread(target=self.requestPic, args=(url))  # 新建线程
+        thread = Thread(target=self.requestPic, args=(url,))  # 新建线程
         self.logger.info("已新建线程")
         thread.start()
         self.logger.info("当前活跃中线程: {}".format(enumerate()))
@@ -246,7 +265,9 @@ class PixivTools(QMainWindow, Ui_PixivTools):
             err_info = "服务器出现错误或已重定向到新网址，请稍后再试或联系作者\nError Code: W{}".format(
                 str(self.img.status_code))
         else:
-            file_name = "file.obj"
+            file_name = "{}.png".format(time.strftime(
+                    "%Y%m%d%H%M%S", time.localtime()))
+            self.fn = file_name
             with open(file_name, "wb") as f:
                 f.write(self.img.content)
 
@@ -256,7 +277,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
 
             if w <= h:
                 scale = w / h
-                h = 375
+                h = 420
                 w = h * scale
             else:
                 scale = h / w
@@ -405,7 +426,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
 
             self.logger.info("加载图片")
             self.statusBar.showMessage("加载图片中...")
-            self.img_r = requests.get(info['url'])
+            self.img_r = requests.get(info['url'], verify=False)
             if self.checkError_r(self.img_r):
                 file_name = "random.obj"
                 with open(file_name, "wb") as f:
@@ -502,16 +523,16 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         self.suc_count = 0
         self.fail_count = 0
         for y in range(len(self.pidList)):
-            i = self.pidList[y]
-            self.StatusText.append("({}/{})正在尝试下载图片：{}".format(y+1, len(self.pidList), i))
-            mpid = i[:-2:]
+            mpid = self.pidList[y]
+            self.StatusText.append("({}/{})正在尝试下载图片：{}".format(y+1, len(self.pidList), mpid))
             self.Error_nf = False
-            a = 1
+            a = 2
             self.download_l(mpid, 1, a)
             if self.Error_nf == True:
-                self.download_l(i, 0, 0)
+                self.download_l(mpid, 0, 0)
                 continue
             self.StatusText.append("当前pid为图集")
+            self.download_l(mpid, 1, 1)
             while self.Error_nf == False:
                 a += 1
                 self.StatusText.append("尝试下载第{}页图片".format(a))
@@ -527,6 +548,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         else:
             wpid = pid
         url = "https://pixiv.re/{}.png".format(wpid)
+        self.logger.info("下载链接：{}".format(url))
         self.logger.info("尝试下载图片: {}".format(wpid))
         self.statusBar.showMessage("正在下载：{}".format(wpid))
         self.img = requests.get(url)
