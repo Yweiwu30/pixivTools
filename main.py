@@ -461,8 +461,8 @@ class PixivTools(QMainWindow, Ui_PixivTools):
 
         self.PS.Line.emit(self.name, title)
         self.PS.Line.emit(self.author, author)
-        self.PS.Line.emit(self.date, id)
-        self.PS.Line.emit(self.pid_r, date)
+        self.PS.Line.emit(self.date, date)
+        self.PS.Line.emit(self.pid_r, id)
         self.PS.Line.emit(self.tagShow, tags)
 
         self.logger.info("加载图片")
