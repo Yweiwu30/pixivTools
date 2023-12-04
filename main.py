@@ -32,7 +32,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         atexit.register(self.delete)
         atexit.register(self.delete_r)
 
-        self.version = "release-3.0"
+        self.version = "release-3.1"
 
         self.PS = PicSignals_r()  # 实例化
 
@@ -197,8 +197,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         if self.fn == "":
             pass
         else:
-            img = Image.open(self.fn)
-            img.show()
+            os.startfile(os.path.abspath(self.fn))
 
     @catch_exception
     def disabled_sth(self, state):
@@ -395,17 +394,17 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         status = False
         self.PS.Line.emit(self.PictureView, "预览图将在这里展示..")
         if req.status_code == 404:
-            QMessageBox.critical(self, "错误", "图片不存在\nError Code: R404")
+            self.PS.Line.emit(self.PictureView_2, "图片不存在\nError Code: R404")
         elif req.status_code == 403:
-            QMessageBox.critical(self, "错误", "服务器拒绝访问，请稍后再试\nError Code: R403")
+            self.PS.Line.emit(self.PictureView_2, "服务器拒绝访问，请稍后再试\nError Code: R403")
         elif req.status_code == 504:
-            QMessageBox.critical(self, "错误", "服务器网关超时，请稍后再试\nError Code: R504")
+            self.PS.Line.emit(self.PictureView_2, "服务器网关超时，请稍后再试\nError Code: R504")
         elif req.status_code == 408:
-            QMessageBox.critical(self, "错误", "服务器请求超时，请稍后再试\nError Code: R408")
+            self.PS.Line.emit(self.PictureView_2, "服务器请求超时，请稍后再试\nError Code: R408")
         elif req.status_code == 503:
-            QMessageBox.critical(self, "错误", "服务器目前无法使用\nError Code: R503")
+            self.PS.Line.emit(self.PictureView_2, "服务器目前无法使用\nError Code: R503")
         elif 300 <= req.status_code < 400:
-            QMessageBox.critical(self, "错误",
+            self.PS.Line.emit(self.PictureView_2, "错误",
                                  "服务器出现错误或已重定向到新网址，请稍后再试或联系作者\nError Code: R{}".format(
                                      str(req.status_code)))
         else:
@@ -434,9 +433,11 @@ class PixivTools(QMainWindow, Ui_PixivTools):
                 self.info_rd = json.loads(info_j)
                 info = self.info_rd
                 # print(info, type(info))
-                if info['success']:
+                if info['success'] and info['data'] != None:
                     self.displayPic_r(info)
                 else:
+                    if info['data'] == None:
+                        info['message']="没有图片信息"
                     self.PS.Line.emit(self.PictureView_2, info['message'])
                     self.logger.info(info['message'])
         except requests.exceptions.ConnectionError:
@@ -500,8 +501,7 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         if self.fn_r == "":
             pass
         else:
-            img = Image.open(self.fn_r)
-            img.show()
+            os.startfile(os.path.abspath(self.fn_r))
     @catch_exception
     def delete_r(self):
         self.logger.info("删除缓存文件")
@@ -616,7 +616,6 @@ class PixivTools(QMainWindow, Ui_PixivTools):
         url = "https://pixiv.re/{}.png".format(wpid)
         self.logger.info("下载链接：{}".format(url))
         self.logger.info("尝试下载图片: {}".format(wpid))
-        #self.statusBar.showMessage("正在下载：{}".format(wpid))
         try:
             self.img = requests.get(url)
             err_info = ""
